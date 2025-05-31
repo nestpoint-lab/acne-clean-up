@@ -15,7 +15,7 @@
       color: #f7f7f7;
     }
     header {
-      background: url('https://nestpoint-lab.github.io/acne-clean-up/header-clean.jpg') center/cover no-repeat;
+      background: url('https://nestpoint-lab.github.io/acne-clean-up/ChatGPT%20Image%202025年5月31日%2013_24_34.png') center/cover no-repeat;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -38,6 +38,7 @@
       padding: 40px 30px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      color: #000;
     }
     h2 {
       font-size: 1.8rem;
@@ -65,15 +66,35 @@
       margin: 40px auto;
       text-align: center;
     }
-    .image-center {
-      text-align: center;
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
       margin: 40px 0;
     }
-    .image-center img {
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center;
+    }
+    .carousel img {
       width: 80%;
       max-width: 600px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .carousel-buttons {
+      text-align: center;
+    }
+    .carousel-buttons button {
+      margin: 10px 5px;
+      padding: 10px 20px;
+      font-weight: bold;
     }
     footer {
       text-align: center;
@@ -87,44 +108,49 @@
 <body>
 
 <header>
-  </header>
+</header>
 
 <main>
-  <p>髪型も服装も整えてるのに、「なんか清潔感ないね」って言われたこと、ありませんか？</p>
 
-  <p>肌は、その人の印象を大きく左右します。肌が汚いだけで「不摂生そう」「だらしない」「不潔そう」と思われてしまう。</p>
+<!-- 前略（元の本文） -->
 
-  <p>それだけで、第一印象・仕事・恋愛のチャンスを何個も逃してしまっているかもしれません。</p>
-
-  <h2>でも、肌は“体質”じゃない。</h2>
-  <p>生まれつきだと思っていた肌トラブル、実は「やり方」が間違っていただけかもしれません。</p>
-  <p>必要なのは、知識でも高級スキンケアでもなく、「正しい順番とケア」だけ。</p>
-
-  
-
-  <h2>講座で学べること</h2>
-  <ul>
-    <li>肌が汚く見える本当の原因</li>
-    <li>今日からできる肌改善ステップ</li>
-    <li>スキンケア初心者でも失敗しないやり方</li>
-    <li>眉・髪・髪型の整え方（＋垢抜け見せテク）</li>
-  </ul>
-
-  <h2>講師：島田理央</h2>
-  <p>これまで3000人以上の男性を清潔感ある見た目に導いてきた肌コンサルタント。美容初心者でも実践できるメソッドを厳選してお伝えします。</p>
-
-  <h2>動画講座の受け取り方法</h2>
-  <p>この内容は、LINE登録者限定で公開中です。<br>
-  清潔感を出すためのスキンケア方法を、動画でわかりやすく解説しています。</p>
-
-  <div style="text-align:center;">
-    <a class="cta" href="https://lin.ee/MfYzrNR">▶ 今すぐLINEで受け取る</a>
+  <h2>実際に肌が変わった方の声</h2>
+  <div class="carousel">
+    <div class="carousel-track" id="carousel-track">
+      <div class="carousel-item">
+        <img src="https://nestpoint-lab.github.io/acne-clean-up/voice1.jpg" alt="お客様の声1">
+        <p><strong>24歳 男性・営業職</strong><br>今まで自己流でスキンケアしてきたけど、動画で紹介されてた方法に変えたら、本当にニキビが減って感動しました。</p>
+      </div>
+      <div class="carousel-item">
+        <img src="https://nestpoint-lab.github.io/acne-clean-up/voice2.jpg" alt="お客様の声2">
+        <p><strong>31歳 男性・SE</strong><br>思春期の頃からニキビがコンプレックスだったのですが、洗顔のやり方だけでこんなに違うんだと驚きました。</p>
+      </div>
+      <div class="carousel-item">
+        <img src="https://nestpoint-lab.github.io/acne-clean-up/voice3.jpg" alt="お客様の声3">
+        <p><strong>28歳 男性・自営業</strong><br>半信半疑でしたが、保湿とUVケアの順番を変えるだけで肌の調子が安定。人前でも自信が持てるようになりました。</p>
+      </div>
+    </div>
   </div>
+  <div class="carousel-buttons">
+    <button onclick="moveSlide(-1)">← 戻る</button>
+    <button onclick="moveSlide(1)">進む →</button>
+  </div>
+
 </main>
 
 <footer>
   &copy; 2025 島田理央｜肌から変わる人生
 </footer>
+
+<script>
+let index = 0;
+function moveSlide(direction) {
+  const track = document.getElementById('carousel-track');
+  const totalSlides = track.children.length;
+  index = (index + direction + totalSlides) % totalSlides;
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+</script>
 
 </body>
 </html>
