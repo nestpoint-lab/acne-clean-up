@@ -70,36 +70,6 @@
       background: #b71c1c;
       cursor: pointer;
     }
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      margin: 40px 0;
-    }
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-    .carousel-item {
-      min-width: 100%;
-      box-sizing: border-box;
-      padding: 20px;
-      text-align: center;
-    }
-    .carousel img {
-      width: 80%;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
-    .carousel-buttons {
-      text-align: center;
-    }
-    .carousel-buttons button {
-      margin: 10px 5px;
-      padding: 10px 20px;
-      font-weight: bold;
-    }
     footer {
       text-align: center;
       font-size: 0.8rem;
@@ -160,43 +130,16 @@
   <p>ですので、この動画でスキンケアの「間違い」と「正しい方法」を分かりやすくお伝えしています。</p>
 
   <h2>お客様の声</h2>
-  <div class="carousel">
-    <div class="carousel-track" id="carousel-track">
-      <div class="carousel-item">
-        <img src="https://raw.githubusercontent.com/nestpoint-lab/acne-clean-up/main/images/voice1.jpg" alt="お客様の声1">
-        <p>「スキンケアの順番を変えただけで、肌が全然違う！」</p>
-      </div>
-      <div class="carousel-item">
-        <img src="https://raw.githubusercontent.com/nestpoint-lab/acne-clean-up/main/images/voice2.jpg" alt="お客様の声2">
-        <p>「大人ニキビがやっと落ち着いて、人に会うのが楽しくなった」</p>
-      </div>
-      <div class="carousel-item">
-        <img src="https://raw.githubusercontent.com/nestpoint-lab/acne-clean-up/main/images/voice3.jpg" alt="お客様の声3">
-        <p>「彼女にも肌きれいになったねって褒められました！」</p>
-      </div>
-    </div>
-    <div class="carousel-buttons">
-      <button onclick="moveSlide(-1)">&lt;</button>
-      <button onclick="moveSlide(1)">&gt;</button>
-    </div>
-  </div>
+  <ul>
+    <li>「スキンケアの順番を変えただけで、肌が全然違う！」</li>
+    <li>「大人ニキビがやっと落ち着いて、人に会うのが楽しくなった」</li>
+    <li>「彼女にも肌きれいになったねって褒められました！」</li>
+  </ul>
 </main>
 
 <footer>
   &copy; 2025 島田理央｜肌から変わる人生
 </footer>
-
-<script>
-let index = 0;
-function moveSlide(direction) {
-  const track = document.getElementById('carousel-track');
-  const totalSlides = track.children.length;
-  index = (index + direction + totalSlides) % totalSlides;
-  track.style.transform = `translateX(-${index * 100}%)`;
-}
-// 自動再生（5秒ごと）
-setInterval(() => moveSlide(1), 5000);
-</script>
 
 </body>
 </html>
